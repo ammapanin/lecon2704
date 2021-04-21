@@ -61,13 +61,45 @@ class ID0NN(Page):
     res2 = (rest == 2)
     return ((self.subsession.round_number == 1) and res2)  
     
-
 class ID(Page):    
   form_model = 'player'
   form_fields = [ 'Q1',]
   def is_displayed(self):  
     return (self.subsession.round_number == 1)
+
+class r6(Page):
+  form_model = 'player'
+  form_fields = ['Q2_r6_increase_L']                
+
+  def is_displayed(self):
+    return (self.player.continue_page == True)
   
+  def before_next_page(self):
+    print("choice")
+    print(self.player.Q2_r6_increase_L)
+    
+    if self.player.Q2_r6_increase_L == 2:
+      self.player.continue_page = False
+      
+class r7(Page):
+  form_model = 'player'
+  form_fields = ['Q3_r7_increase_L']
+ 
+  def is_displayed(self):
+    return (self.player.continue_page == True)
+  
+  def before_next_page(self):
+    if self.player.Q3_r7_increase_L == 2:
+      self.player.continue_page = False
+        
+class r8(Page):
+  form_fields = ['Q4_r8_increase_L']
+  def is_displayed(self):
+    return (self.player.continue_page == True)
+
+  def before_next_page(self):
+    self.player.continue_page = False
+    
 class ID1(Page):  
   form_model = 'player'
   form_fields = ['Q2_r6_increase_L',
@@ -109,16 +141,19 @@ class Questionnaire(Page):
     return (self.subsession.round_number == 1)
         
 page_sequence = [
-            Introduction_first_page,
-            Introduction_second_page,         
-            ID0P,
-            ID0N,
-            ID0NN,
-            ID,
-            ID1,
-            ID2,
-            Questionnaire
-            ]
+  Introduction_first_page,
+  Introduction_second_page,         
+  ID0P,
+  ID0N,
+  ID0NN,
+  ID,
+  r6,
+  r7,
+  r8,
+  ID1,
+  ID2,
+  Questionnaire
+]
 
 
 

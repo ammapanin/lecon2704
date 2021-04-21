@@ -90,7 +90,7 @@ class Player(BasePlayer):
     time_video_page_start = models.FloatField()
     time_video_page_leave = models.FloatField()
 
-    print(time_video_page_start)
+    continue_page = models.BooleanField()
     
     time = models.IntegerField( default=0 )
 
