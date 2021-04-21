@@ -9,8 +9,58 @@
 
 {% block content %}
 
+
+	<div id="Question0">
+{% formfield player.Env_question with label="How worried are you about the climate change?" %}
+    </font>
+    </div>
+    <div>
+    <font size="3">
+	
+	<div id="Question1">
+{% formfield player.Env_q_1 with label="Do you donate or volunteer in order to fight climate change?" %}
+    </font>
+    </div>
+    <div>
+    <font size="3">	
+	
+	<div id="Question2">
+{% formfield player.Env_q_2 with label="Do you invest/divest by taking into account the environmental aspects?" %}
+    </font>
+    </div>
+    <div>
+    <font size="3">	
+	
+	<div id="Question3">
+{% formfield player.Env_q_3 with label="Do you use public transportation rather than a car?" %}
+    </font>
+    </div>
+    <div>
+      <font size="3">
+	
+	<div id="Question4">
+{% formfield player.Env_q_4 with label="Do you try to decrease the intake of animal products in your diet?" %}
+    </font>
+    </div>
+    <div>
+    <font size="3">		
+	
+	<div id="Question5">
+{% formfield player.Env_q_5 with label="Do you buy second-hand clothes rather than new ones?" %}
+    </font>
+    </div>
+    <div>
+    <font size="3">		
+	
+	<div id="Question6">
+{% formfield player.Env_q_6 with label="Do you try to fly less in order to fight climate change?" %}
+    </font>
+    </div>
+    <div>
+    <font size="3">		
+	
     
-    <div id="Question2">
+    <div id="Question7">
 {% formfield player.Financial_literacya with label="Suppose you had $100 in a savings account and the interest rate was 2% per year. After 2 years, how much do you think you would have in the account if you left the money to grow?" %}
     </font>
     </div>
@@ -18,7 +68,7 @@
     <font size="3">
     
     
-    <div id="Question3">
+    <div id="Question8">
 {% formfield player.Financial_literacyc with label="Please tell us whether this statement is true or false. ‘Buying a stock of a company usually provides a safer return than a stock mutual fund’." %}
     </font>
 	 </div>
@@ -26,7 +76,7 @@
     <font size="3">
     </div>
     
-	<div id="Question4">
+	<div id="Question9">
 {% formfield player.Financial_literacyd with label="Do you have or had an investment account?" %}
     </font>
 	 </div>
@@ -34,7 +84,7 @@
     <font size="3">
     </div>
 	
-	<div id="Question5">
+	<div id="Question10">
 {% formfield player.Financial_literacye with label="What is your knowledge level about financial markets?" %}
     </font>
 	 </div>
@@ -42,7 +92,7 @@
     <font size="3">
     </div>
 	
-	<div id="Question6">
+	<div id="Question11">
 {% formfield player.Financial_literacyf with label="What is your experience level regarding financial markets?" %}
     </font>
 	 </div>
@@ -53,7 +103,11 @@
 <br/>
 
 
-{% next_button %}
+    <div id="next">
+         <Click on the next button to continue... <br>
+         <input class="btn btn-primary btn-large btn-primary next-button" type="button"
+         value="Next" onclick="next_page()">
+    </div>
 
     
 
@@ -61,5 +115,15 @@
 
 {% block scripts %}
 
-
+    <script type="text/javascript">
+  function next_page(){
+        if ($("#id_Financial_literacyf_0").is(":checked") || $("#id_Financial_literacyf_1").is(":checked") || $("#id_Financial_literacyf_2").is(":checked") || $("#id_Financial_literacyf_3").is(":checked")){
+            document.getElementById("form").submit();
+            return true;
+        } else {
+            return false;
+        }
+  }
+    
+    </script>
 {% endblock %}

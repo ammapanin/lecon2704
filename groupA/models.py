@@ -60,10 +60,20 @@ class Player(BasePlayer):
     Q4_envscore50_R = models.PositiveIntegerField(widget=widgets.RadioSelectHorizontal, choices=[[1, "Portfolio 1: Environmental Score=50%, Return=5%"], [2, "Portfolio 2: Environmental Score=5%, Return=8%"]]) #Q3_20000_6m 
     Q5_envscore35_R = models.PositiveIntegerField(widget=widgets.RadioSelectHorizontal, choices=[[1, "Portfolio 1: Environmental Score=35%, Return=5%"], [2, "Portfolio 2: Environmental Score=5%, Return=8%"]]) #Q4_20000_6m 
     Q6_envscore20_R = models.PositiveIntegerField(widget=widgets.RadioSelectHorizontal, choices=[[1, "Portfolio 1: Environmental Score=20%, Return=5%"], [2, "Portfolio 2: Environmental Score=5%, Return=8%"]]) #Q5_20000_6m                   
-    Q7_envscore5_R = models.PositiveIntegerField(widget=widgets.RadioSelectHorizontal, choices=[[1, "Portfolio 1: Environmental Score=5%, Return=5%"], [2, "Portfolio 2: Environmental Score=5%, Return=8%"]]) #Q1_500_1year
+    Q7_envscore5_R = models.PositiveIntegerField(widget=widgets.RadioSelectHorizontal, choices=[[1, "Portfolio 1: Environmental Score=5%, Return=5%"], [2, "Portfolio 2: Environmental Score=5%, Return=8%"]])
+
+    Env_q_1 = models.PositiveIntegerField(widget=widgets.RadioSelect, choices=[[1, "Yes"], [2, "No"]])
     
-   # Env_q_individual=tool_models.MultipleChoiceModelField(label="How do you fight against the climate change in your private life? (maximum 3 choices)", min_choices=1, max_choices=3)
+    Env_q_2 = models.PositiveIntegerField(widget=widgets.RadioSelect, choices=[[1, "Yes"], [2, "No"]])
     
+    Env_q_3 = models.PositiveIntegerField(widget=widgets.RadioSelect, choices=[[1, "Yes"], [2, "No"]])
+    
+    Env_q_4 = models.PositiveIntegerField(widget=widgets.RadioSelect, choices=[[1, "Yes"], [2, "No"]])
+    
+    Env_q_5 = models.PositiveIntegerField(widget=widgets.RadioSelect, choices=[[1, "Yes"], [2, "No"]])
+    
+    Env_q_6 = models.PositiveIntegerField(widget=widgets.RadioSelect, choices=[[1, "Yes"], [2, "No"]])
+
     Env_question = models.PositiveIntegerField(widget=widgets.RadioSelect, choices=[[1, "Not worried at all"], [2, "A little worried"], [3, "I often think about it"], [4, "I am very worried about it"], [5, "Prefer not to answer"]])
     
     Financial_literacya = models.PositiveIntegerField(widget=widgets.RadioSelect, choices=[[1, "More than $102"], [2, "Exactly $102"], [3, "Less than $102"], [4, "Do not know"], [5, "Prefer not to answer"]])

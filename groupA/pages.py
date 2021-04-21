@@ -94,17 +94,17 @@ class ID2(Page):
     return (self.player.Q1 == 2)
 #    impair = (rest == 1)
 #    return ((self.subsession.round_number == 1) and impair)
- 
-class Questionnaire(Page):
-    
-  # def  Env_q_individual_choices(self):
-  #   """Return the list of statements to choose from."""
-  #   return ["By donating", "By volunteering", "By investing/divesting accordingly", 
-  #                "By flying less", "By taking public transport instead of a car", "By reducing the intake of animal products in my diet", "By buying my clothes in second-hand stores", "None of the mentioned"]  
-  
+
+
+class Questionnaire(Page):   
   form_model = 'player'
-  form_fields = [ #'Env_q_individual',
-                  #'Env_question',
+  form_fields = [ 'Env_question',
+                  'Env_q_1',
+                  'Env_q_2',
+                  'Env_q_3',
+                  'Env_q_4',
+                  'Env_q_5',
+                  'Env_q_6',
                   'Financial_literacya',
                   'Financial_literacyc',
                   'Financial_literacyd',
@@ -113,7 +113,6 @@ class Questionnaire(Page):
   def is_displayed(self):   
     return (self.subsession.round_number == 1)
         
-  
 page_sequence = [
             Introduction_first_page,
             Introduction_second_page,
