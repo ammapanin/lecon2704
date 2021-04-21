@@ -1,0 +1,41 @@
+{% extends "groupA/Base.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+    
+{% endblock %}
+
+{% block content %}
+
+
+    <div id="Question1">
+    <font size="4">
+    <p align="center">
+{% formfield player.Q1 label="Please choose between these two portfolios:" %}
+    </font>
+    </div>
+   
+    
+<br/>
+
+{% next_button  %}
+
+{% endblock %}
+
+{% block scripts %}
+
+  <script type="text/javascript">
+
+
+  function next_page(){
+        if ($("#id_Q1_0").is(":checked") || $("#id_Q1_1").is(":checked")) {
+            document.getElementById("form").submit();
+            return true;
+        } else {
+            return false;
+        }
+  }
+    
+  </script>
+  
+{% endblock %}

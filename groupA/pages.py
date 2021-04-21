@@ -35,60 +35,55 @@ class Introduction_second_page(Page):
   def is_displayed(self):
     return self.subsession.round_number == 1
 
-
-    
 class ID0P(Page):
   def before_next_page(self):
     self.player.time_video_page_leave = time.time()
     
   def is_displayed(self):  
-    rest = self.player.id_in_group % 3 #2
+    rest = self.player.id_in_group % 3 
     res0 = (rest == 0)
-    #pair = (rest == 0)
-    return ((self.subsession.round_number == 1) and res0) #pair
+    return ((self.subsession.round_number == 1) and res0)
      
 class ID0N(Page):
-
   def before_next_page(self):
     self.player.time_video_page_leave = time.time()
 
   def is_displayed(self):  
-    rest = self.player.id_in_group % 3#2
+    rest = self.player.id_in_group % 3
     res1 = (rest == 1)
-    #impair = (rest == 1)
-    return ((self.subsession.round_number == 1) and res1)  #impair
-
+    return ((self.subsession.round_number == 1) and res1)  
 
 class ID0NN(Page):
-    
+  def before_next_page(self):
+    self.player.time_video_page_leave = time.time()
   def is_displayed(self):  
     rest = self.player.id_in_group % 3
     res2 = (rest == 2)
     return ((self.subsession.round_number == 1) and res2)  
     
 
-class ID(Page):
-    
+class ID(Page):    
   form_model = 'player'
   form_fields = [ 'Q1',]
   def is_displayed(self):  
-    rest = self.player.id_in_group % 2
-    return ((self.subsession.round_number == 1))    
-    
-class ID1(Page):
-    
+    return (self.subsession.round_number == 1)
+  
+class ID1(Page):  
   form_model = 'player'
-  form_fields = ['Q2_r6_increase_L', 'Q3_r7_increase_L', 'Q4_r8_increase_L',]
+  form_fields = ['Q2_r6_increase_L',
+                 'Q3_r7_increase_L',
+                 'Q4_r8_increase_L',]
   def is_displayed(self):  
-    rest = self.player.id_in_group % 2
     return (self.player.Q1 == 1)
-#    pair = (rest == 0)
-#    return ((self.subsession.round_number == 1) and pair)
-    
+  
 class ID2(Page):
-    
   form_model = 'player'
-  form_fields = ['Q2_envscore80_R', 'Q3_envscore65_R', 'Q4_envscore50_R', 'Q5_envscore35_R', 'Q6_envscore20_R', 'Q7_envscore5_R', ]
+  form_fields = ['Q2_envscore80_R',
+                 'Q3_envscore65_R',
+                 'Q4_envscore50_R',
+                 'Q5_envscore35_R',
+                 'Q6_envscore20_R',
+                 'Q7_envscore5_R', ]
   def is_displayed(self):  
     rest = self.player.id_in_group % 2
     return (self.player.Q1 == 2)
@@ -115,10 +110,7 @@ class Questionnaire(Page):
         
 page_sequence = [
             Introduction_first_page,
-            Introduction_second_page,
-            #ID,
-            #ID1,
-            #ID2,            
+            Introduction_second_page,         
             ID0P,
             ID0N,
             ID0NN,
