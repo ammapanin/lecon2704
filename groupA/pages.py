@@ -67,12 +67,25 @@ class ID(Page):
   def is_displayed(self):  
     return (self.subsession.round_number == 1)
 
+  def before_next_page(self):
+    # either continue with returns or continue with
+    #  environment
+    print("choice")
+    print(self.player.Q1)
+    
+    if self.player.Q1 == 1:
+      self.player.continue_return = True
+    if self.player.Q1 == 2:
+      self.player.continue_return = False
+      
 class r6(Page):
   form_model = 'player'
   form_fields = ['Q2_r6_increase_L']                
 
   def is_displayed(self):
-    return (self.player.continue_page == True)
+    show_page = (self.player.continue_return == True &
+                 self.player.continue_page == True)
+    return show_page
   
   def before_next_page(self):
     print("choice")
@@ -86,7 +99,9 @@ class r7(Page):
   form_fields = ['Q3_r7_increase_L']
  
   def is_displayed(self):
-    return (self.player.continue_page == True)
+    show_page = (self.player.continue_return == True &
+                 self.player.continue_page == True)
+    return show_page
   
   def before_next_page(self):
     if self.player.Q3_r7_increase_L == 2:
@@ -95,11 +110,76 @@ class r7(Page):
 class r8(Page):
   form_fields = ['Q4_r8_increase_L']
   def is_displayed(self):
-    return (self.player.continue_page == True)
+    show_page = (self.player.continue_return == True &
+                 self.player.continue_page == True)
+    return show_page
+  
+  def before_next_page(self):
+    self.player.continue_page = False
+
+class env80(Page):
+  form_fields = ['Q2_envscore80_R']
+  def is_displayed(self):
+    show_page = (self.player.continue_return == False &
+                 self.player.continue_page == True)
+    return show_page
+
+  def before_next_page(self):
+    if self.player.Q2_envscore80_R == 2:
+      self.player.continue_page = False
+
+class env65(Page):
+  form_fields = ['Q3_envscore65_R']
+  def is_displayed(self):
+    show_page = (self.player.continue_return == False &
+                 self.player.continue_page == True)
+    return show_page
+  def before_next_page(self):
+    if self.player.Q3_envscore65_R == 2:
+      self.player.continue_page = False
+      
+class env50(Page):
+  form_fields = ['Q4_envscore50_R']
+  def is_displayed(self):
+    show_page = (self.player.continue_return == False &
+                 self.player.continue_page == True)
+    return show_page
 
   def before_next_page(self):
     self.player.continue_page = False
-    
+
+class env35(Page):
+  form_fields = ['Q5_envscore35_R']
+  def is_displayed(self):
+    show_page = (self.player.continue_return == False &
+                 self.player.continue_page == True)
+    return show_page
+
+  def before_next_page(self):
+    if self.player.Q5_envscore35_R == 2:
+      self.player.continue_page = False
+
+class env20(Page):
+  form_fields = ['Q6_envscore20_R']
+  def is_displayed(self):
+    show_page = (self.player.continue_return == False &
+                 self.player.continue_page == True)
+    return show_page
+
+  def before_next_page(self):
+    if self.player.Q6_envscore20_R == 2:
+      self.player.continue_page = False
+
+class env5(Page):
+  form_fields = ['Q7_envscore5_R']
+  def is_displayed(self):
+    show_page = (self.player.continue_return == False &
+                 self.player.continue_page == True)
+    return show_page
+
+  def before_next_page(self):
+    self.player.continue_page = False
+
 class ID1(Page):  
   form_model = 'player'
   form_fields = ['Q2_r6_increase_L',
@@ -141,15 +221,21 @@ class Questionnaire(Page):
     return (self.subsession.round_number == 1)
         
 page_sequence = [
-  Introduction_first_page,
-  Introduction_second_page,         
-  ID0P,
-  ID0N,
-  ID0NN,
+  #Introduction_first_page,
+  #Introduction_second_page,         
+  #ID0P,
+  #ID0N,
+  #ID0NN,
   ID,
   r6,
   r7,
   r8,
+  env80,
+  env65,
+  env50,
+  env35,
+  env20,
+  env5,
   ID1,
   ID2,
   Questionnaire
