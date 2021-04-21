@@ -1,0 +1,139 @@
+{% extends "groupA/Base.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+    
+{% endblock %}
+
+{% block content %}
+
+    <div id="Question2">
+    <font size="4">
+{% formfield player.Q2_r6_increase_L label="Please choose between these two portfolios:" %}
+    </font>
+    </div>
+    
+    <div id="next2">
+         <Click on the next button to continue... <br>
+         <input class="btn btn-primary btn-large btn-primary next-button" type="button"
+         value="Next" onclick="verif2()">
+    </div>
+    
+    <div id="Question3">
+    <font size="4">
+{% formfield player.Q3_r7_increase_L label="Please choose between these two portfolios:" %}
+    </font>
+    </p>
+    </div>
+    
+<br/>
+
+    <div id="next3">
+         <Click on the next button to continue... <br>
+         <input class="btn btn-primary btn-large btn-primary next-button" type="button"
+         value="Next" onclick="verif3()">
+    </div>
+
+    <div id="Question4">
+    <font size="4">    
+{% formfield player.Q4_r8_increase_L  label="Please choose between these two portfolios:" %}
+    </font>
+    </p>
+    </div>
+    
+<br/>
+
+    <div id="next">
+         <Click on the next button to continue... <br>
+         <input class="btn btn-primary btn-large btn-primary next-button" type="button"
+         value="Next" onclick="next_page()">
+    </div>
+
+
+{% endblock %}
+
+{% block scripts %}
+
+<script type="text/javascript">
+  
+  function hide(id_name) {document.getElementById(id_name).style.visibility = "hidden" }
+  function show(id_name) {document.getElementById(id_name).style.visibility = "visible" }
+  
+  window.onload = function () { hide("Question3"); hide("next3"); hide("Question4"); hide("next")};
+  
+  //function verif(){
+    //var decision = $("#id_Q1_L_0").is(":checked");
+    //console.log($("#id_Q1_L_0").is(":checked"));
+    //if(decision) {
+        //show("Question2");
+        //show("next2");
+        //hide("next1");
+        //hide("Question3");
+        //hide("Question4");
+        //hide("next3");
+		//hide("next");
+        
+        //return true;
+    //} else {
+//        alert("Value of decision: " + $("#id_Q1_L_0").is(":checked"));
+        //form["Q2_r6_increase_L"].value = 2;
+        //form["Q3_r7_increase_L"].value = 2;
+        //form["Q4_r8_increase_L"].value = 2;
+        //document.getElementById("form").submit();
+        //return true;
+    //}
+  //}
+
+  function verif2(){
+    var decision = $("#id_Q2_r6_increase_L_0").is(":checked");
+    console.log($("#id_Q2_r6_increase_L_0").is(":checked"));
+    if(decision) {
+        show("Question3");
+        hide("next2");
+        show("next3");
+        return true;    
+    } else {
+        if ($("#id_Q2_r6_increase_L_1").is(":checked")) {
+            form["Q3_r7_increase_L"].value = 2;
+            form["Q4_r8_increase_L"].value = 2;
+            
+            document.getElementById("form").submit();
+            return true;
+        } else {
+            return false;
+        }
+    }
+  }
+  
+    function verif3(){
+    var decision = $("#id_Q3_r7_increase_L_0").is(":checked");
+    console.log($("#id_Q3_r7_increase_L_0").is(":checked"));
+    if(decision) {
+        show("Question4");
+        hide("next3");
+        show("next");
+       
+        return true;
+    } else {
+        if ($("#id_Q3_r7_increase_L_1").is(":checked")) {
+            form["Q4_r8_increase_L"].value = 2;
+                        
+            document.getElementById("form").submit();
+            return true;
+        } else {
+            return false;
+        }
+    }
+  }
+
+  function next_page(){
+        if ($("#id_Q4_r8_increase_L_0").is(":checked") || $("#id_Q4_r8_increase_L_1").is(":checked")) {
+            document.getElementById("form").submit();
+            return true;
+        } else {
+            return false;
+        }
+  }
+
+</script>
+{% endblock %}
