@@ -50,17 +50,17 @@ class Player(BasePlayer):
     Q1 = models.PositiveIntegerField(widget=widgets.RadioSelectHorizontal, choices=[[1, "Portfolio 1: Environmental Score=5%, Return=8%"], [2, "Portfolio 2: Environmental Score=95%, Return=5%"]]) #Q1_500_6m
 
 #    Q1_L = models.PositiveIntegerField(widget=widgets.RadioSelectHorizontal, choices=[[1, "Portfolio 1: Environmental Score=5%, Return=8%"], [2, "Portfolio 2: Environmental Score=95%, Return=5%"]]) #Q1_500_6m
-    Q2_r6_increase_L = models.PositiveIntegerField(widget=widgets.RadioSelectHorizontal, choices=[[1, "Portfolio 1: Environmental Score=5%, Return=8%"], [2, "Portfolio 2: Environmental Score=95%, Return=6%"]]) #Q2_500_6m
-    Q3_r7_increase_L = models.PositiveIntegerField(widget=widgets.RadioSelectHorizontal, choices=[[1, "Portfolio 1: Environmental Score=5%, Return=8%"], [2, "Portfolio 2: Environmental Score=95%, Return=7%"]]) #Q3_500_6m   
-    Q4_r8_increase_L = models.PositiveIntegerField(widget=widgets.RadioSelectHorizontal, choices=[[1, "Portfolio 1: Environmental Score=5%, Return=8%"], [2, "Portfolio 2: Environmental Score=95%, Return=8%"]]) #Q4_500_6m
+    Q2_r6_increase_L = models.PositiveIntegerField(widget=widgets.RadioSelectHorizontal, choices=[[1, "Portfolio 1: Environmental Score=5%, Return=8%"], [2, "Portfolio 2: Environmental Score=95%, Return=6%"]], label="Please choose between these two portfolios:") #Q2_500_6m
+    Q3_r7_increase_L = models.PositiveIntegerField(widget=widgets.RadioSelectHorizontal, choices=[[1, "Portfolio 1: Environmental Score=5%, Return=8%"], [2, "Portfolio 2: Environmental Score=95%, Return=7%"]], label="Please choose between these two portfolios:") #Q3_500_6m   
+    Q4_r8_increase_L = models.PositiveIntegerField(widget=widgets.RadioSelectHorizontal, choices=[[1, "Portfolio 1: Environmental Score=5%, Return=8%"], [2, "Portfolio 2: Environmental Score=95%, Return=8%"]], label="Please choose between these two portfolios:") #Q4_500_6m
     
 #    Q1_R = models.PositiveIntegerField(widget=widgets.RadioSelectHorizontal, choices=[[1, "Portfolio 1: Environmental Score=95%, Return=5%"], [2, "Portfolio 2: Environmental Score=5%, Return=8%"]]) #Q1_500_6m    
-    Q2_envscore80_R = models.PositiveIntegerField(widget=widgets.RadioSelectHorizontal, choices=[[1, "Portfolio 1: Environmental Score=80%, Return=5%"], [2, "Portfolio 2: Environmental Score=5%, Return=8%"]]) #Q1_20000_6m    
-    Q3_envscore65_R = models.PositiveIntegerField(widget=widgets.RadioSelectHorizontal, choices=[[1, "Portfolio 1: Environmental Score=65%, Return=5%%"], [2, "Portfolio 2: Environmental Score=5%, Return=8%"]]) #Q2_20000_6m   
-    Q4_envscore50_R = models.PositiveIntegerField(widget=widgets.RadioSelectHorizontal, choices=[[1, "Portfolio 1: Environmental Score=50%, Return=5%"], [2, "Portfolio 2: Environmental Score=5%, Return=8%"]]) #Q3_20000_6m 
-    Q5_envscore35_R = models.PositiveIntegerField(widget=widgets.RadioSelectHorizontal, choices=[[1, "Portfolio 1: Environmental Score=35%, Return=5%"], [2, "Portfolio 2: Environmental Score=5%, Return=8%"]]) #Q4_20000_6m 
-    Q6_envscore20_R = models.PositiveIntegerField(widget=widgets.RadioSelectHorizontal, choices=[[1, "Portfolio 1: Environmental Score=20%, Return=5%"], [2, "Portfolio 2: Environmental Score=5%, Return=8%"]]) #Q5_20000_6m                   
-    Q7_envscore5_R = models.PositiveIntegerField(widget=widgets.RadioSelectHorizontal, choices=[[1, "Portfolio 1: Environmental Score=5%, Return=5%"], [2, "Portfolio 2: Environmental Score=5%, Return=8%"]])
+    Q2_envscore80_R = models.PositiveIntegerField(widget=widgets.RadioSelectHorizontal, choices=[[1, "Portfolio 1: Environmental Score=80%, Return=5%"], [2, "Portfolio 2: Environmental Score=5%, Return=8%"]], label="Please choose between these two portfolios:") #Q1_20000_6m    
+    Q3_envscore65_R = models.PositiveIntegerField(widget=widgets.RadioSelectHorizontal, choices=[[1, "Portfolio 1: Environmental Score=65%, Return=5%%"], [2, "Portfolio 2: Environmental Score=5%, Return=8%"]], label="Please choose between these two portfolios:") #Q2_20000_6m   
+    Q4_envscore50_R = models.PositiveIntegerField(widget=widgets.RadioSelectHorizontal, choices=[[1, "Portfolio 1: Environmental Score=50%, Return=5%"], [2, "Portfolio 2: Environmental Score=5%, Return=8%"]], label="Please choose between these two portfolios:") #Q3_20000_6m 
+    Q5_envscore35_R = models.PositiveIntegerField(widget=widgets.RadioSelectHorizontal, choices=[[1, "Portfolio 1: Environmental Score=35%, Return=5%"], [2, "Portfolio 2: Environmental Score=5%, Return=8%"]], label="Please choose between these two portfolios:") #Q4_20000_6m 
+    Q6_envscore20_R = models.PositiveIntegerField(widget=widgets.RadioSelectHorizontal, choices=[[1, "Portfolio 1: Environmental Score=20%, Return=5%"], [2, "Portfolio 2: Environmental Score=5%, Return=8%"]], label="Please choose between these two portfolios:") #Q5_20000_6m                   
+    Q7_envscore5_R = models.PositiveIntegerField(widget=widgets.RadioSelectHorizontal, choices=[[1, "Portfolio 1: Environmental Score=5%, Return=5%"], [2, "Portfolio 2: Environmental Score=5%, Return=8%"]], label="Please choose between these two portfolios:")
 
     Env_q_1 = models.PositiveIntegerField(widget=widgets.RadioSelect, choices=[[1, "Yes"], [2, "No"]])
     

@@ -77,6 +77,10 @@ class ID(Page):
       self.player.continue_return = True
     if self.player.Q1 == 2:
       self.player.continue_return = False
+
+      print("go to env")
+      print(self.player.continue_return)
+      print(self.player.continue_page)
       
 class r6(Page):
   form_model = 'player'
@@ -108,6 +112,7 @@ class r7(Page):
       self.player.continue_page = False
         
 class r8(Page):
+  form_model = 'player'
   form_fields = ['Q4_r8_increase_L']
   def is_displayed(self):
     show_page = (self.player.continue_return == True &
@@ -116,12 +121,18 @@ class r8(Page):
   
   def before_next_page(self):
     self.player.continue_page = False
+    self.player.continue_return = False
 
 class env80(Page):
+  form_model = 'player'
   form_fields = ['Q2_envscore80_R']
   def is_displayed(self):
-    show_page = (self.player.continue_return == False &
+    show_page = ((self.player.continue_return == False) &
                  self.player.continue_page == True)
+    print(self.player.continue_return==False)
+    print(self.player.continue_page==True)
+    print(show_page)
+    print("show ^^")
     return show_page
 
   def before_next_page(self):
@@ -129,9 +140,10 @@ class env80(Page):
       self.player.continue_page = False
 
 class env65(Page):
+  form_model = 'player'
   form_fields = ['Q3_envscore65_R']
   def is_displayed(self):
-    show_page = (self.player.continue_return == False &
+    show_page = ((self.player.continue_return == False) &
                  self.player.continue_page == True)
     return show_page
   def before_next_page(self):
@@ -139,19 +151,22 @@ class env65(Page):
       self.player.continue_page = False
       
 class env50(Page):
+  form_model = 'player'
   form_fields = ['Q4_envscore50_R']
   def is_displayed(self):
-    show_page = (self.player.continue_return == False &
+    show_page = ((self.player.continue_return == False) &
                  self.player.continue_page == True)
     return show_page
 
   def before_next_page(self):
-    self.player.continue_page = False
+    if self.player.Q4_envscore50_R == 2:
+      self.player.continue_page = False
 
 class env35(Page):
+  form_model = 'player'
   form_fields = ['Q5_envscore35_R']
   def is_displayed(self):
-    show_page = (self.player.continue_return == False &
+    show_page = ((self.player.continue_return == False) &
                  self.player.continue_page == True)
     return show_page
 
@@ -160,9 +175,10 @@ class env35(Page):
       self.player.continue_page = False
 
 class env20(Page):
+  form_model = 'player'
   form_fields = ['Q6_envscore20_R']
   def is_displayed(self):
-    show_page = (self.player.continue_return == False &
+    show_page = ((self.player.continue_return == False) &
                  self.player.continue_page == True)
     return show_page
 
@@ -171,9 +187,10 @@ class env20(Page):
       self.player.continue_page = False
 
 class env5(Page):
+  form_model = 'player'
   form_fields = ['Q7_envscore5_R']
   def is_displayed(self):
-    show_page = (self.player.continue_return == False &
+    show_page = ((self.player.continue_return == False) &
                  self.player.continue_page == True)
     return show_page
 
@@ -202,7 +219,6 @@ class ID2(Page):
 #    impair = (rest == 1)
 #    return ((self.subsession.round_number == 1) and impair)
 
-
 class Questionnaire(Page):   
   form_model = 'player'
   form_fields = [ 'Env_question',
@@ -221,8 +237,8 @@ class Questionnaire(Page):
     return (self.subsession.round_number == 1)
         
 page_sequence = [
-  #Introduction_first_page,
-  #Introduction_second_page,         
+  Introduction_first_page,
+  Introduction_second_page,         
   #ID0P,
   #ID0N,
   #ID0NN,
@@ -236,10 +252,8 @@ page_sequence = [
   env35,
   env20,
   env5,
-  ID1,
-  ID2,
+  #ID1,
+  #ID2,
   Questionnaire
 ]
-
-
 
