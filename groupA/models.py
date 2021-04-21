@@ -91,7 +91,7 @@ class Player(BasePlayer):
     time_video_page_leave = models.FloatField()
 
     continue_page = models.BooleanField()
-    
+
     time = models.IntegerField( default=0 )
 
     #prolific_PID =  models.CharField( default=str(" ") ) # to store the ID provided by Prolific to each participant
