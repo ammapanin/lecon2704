@@ -239,9 +239,9 @@ class Questionnaire(Page):
 page_sequence = [
   Introduction_first_page,
   Introduction_second_page,         
-  #ID0P,
-  #ID0N,
-  #ID0NN,
+  ID0P,
+  ID0N,
+  ID0NN,
   ID,
   r6,
   r7,
@@ -256,4 +256,3 @@ page_sequence = [
   #ID2,
   Questionnaire
 ]
-
