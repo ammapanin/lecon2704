@@ -1,3 +1,4 @@
+
 {% extends "groupA/Base.html" %}
 {% load otree %}
 {% load staticfiles otree %}
@@ -11,7 +12,9 @@
 
 <div class="box effect7">
       <font size="4">
-      <p align="justify">
+	<p align="justify">
+	<p> Instructions en français sont en bas. <p>
+	  
       <p>For the purpose of this study, we are going to ask you to choose between two portfolios.<p> 
       
       <p>Each portfolio is composed of 20 different stocks. The riskiness level of both portfolios is the same, therefore you do not need to take that into account.
@@ -24,7 +27,18 @@
         Click on the Next button to continue reading instructions.
     </font>
 </p>
-
+<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	  <p>Pour cette étude, on va vous demander de choisir entre deux portefeuilles.<p>
+	  <p>Chaque portefeuille est composé de 20 actions différentes. Le niveau de risque est le même  pour les deux portefeuilles alors vous ne devez pas le prendre en compte. Dans chaque étape, vous devez choisir entre le "Portefeuille 1" et le "Portefeuille 2".<p>
+	  <p> Vous allez avoir quelques informations concernant les deux portefeuilles - vous allez savoir le rendement que vous allez obtenir chaque année en choisisant chaque portefeuille ainsi que le score environnemental de chaque portefeuille. Le score environnemental est attribué à chaque action dans les deux portefeuilles et il mesure la durabilité de l'entreprise donné. Ce score est une moyenne pondérée qui classe chaque entreprise en se basant sur l'information rapportée concernant leur utilisation des ressources, les émissions et l'innovation. Le score prend les valeurs entre 0% et 100%.
+		Le score environnemental d'un portefeuille est une moyenne de 20 scores environnemental de chaque action qui est dans ce portefeuille.
+		Plus le score environnemental est élevé, plus le portefeuille est durable. <p>
+		
+		Appuyez sur le bouton Next pour continuer lire les instructions.
 
 {% next_button %}
 
