@@ -58,5 +58,5 @@ page_sequence = [#Demographics,
                  Question2,
                  ImposterSyndrome,
                  Overconfidence,
-                 Selfevaluation,
-                 Results]
+                 Selfevaluation]
+

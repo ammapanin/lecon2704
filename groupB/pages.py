@@ -1,34 +1,39 @@
+
 from .models import *
-import time
 
 class Heterogeneity(Page):
     form_model = 'player'
     form_fields = ['age', 'gender', 'nationality', 'child', 'residency']
+    
 class Information(Page):
     form_model = 'group'
+    def vars_for_template(self):
+        group = self.group
+        player = self.player
+        player_even = player.id_in_group % 2 == 0
+        return dict(
+            player_even = player_even 
+        )
 class Idealmaternity(Page):
     form_model = 'player'
-    form_fields = ['idealmaternity']
-class Idealpaternity(Page):
-    form_model = 'player'
-    form_fields = ['idealpaternity']
-class Mandatorymaternity(Page):
-    form_model = 'player'
-    form_fields = ['mandatorymaternity']
-class Mandatorypaternity(Page):
-    form_model = 'player'
-    form_fields = ['mandatorypaternity']
+    form_fields = ['mandatorypaternity',
+                   'idealmaternity',
+                   'mandatorymaternity',
+                   'idealpaternity']
+
 class Peercomparaison(Page):
     form_model = 'player'
     form_fields = ['peermaternity', 'peerpaternity']
-class End(Page):
+
+class Publicgood(Page):
     form_model = 'player'
     form_fields = ['Publicgoodgame']
 
-page_sequence = [Information,
+class End(Page):
+    form_model = 'player'
+    
+page_sequence = [#Heterogeneity,
+                 Information,
                  Idealmaternity,
-                 Idealpaternity,
-                 Mandatorymaternity,
-                 Mandatorypaternity,
                  Peercomparaison,
-                 End]
+                 Publicgood]
