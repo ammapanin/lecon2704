@@ -46,18 +46,29 @@ class Subsession(BaseSubsession):
           
           
 class Player(BasePlayer):
-    Q1 = models.PositiveIntegerField(widget=widgets.RadioSelectHorizontal, choices=[[1, "Portfolio 1: Environmental Score=5%, Return(FR:Rendement)=8%"], [2, "Portfolio 2: Environmental Score=95%, Return(FR:Rendement)=5%"]]) 
+    Q1 = models.PositiveIntegerField(
+        widget=widgets.RadioSelectHorizontal,
+        choices=[[1, "Portfolio 1: Environmental Score=5%, Return(FR:Rendement)=8%"], [2, "Portfolio 2: Environmental Score=95%, Return(FR:Rendement)=5%"]],
+        label = "Please choose between these two portfolios//Veuillez choisir entre ces deux options") 
 
-    Q2_r6_increase_L = models.PositiveIntegerField(widget=widgets.RadioSelectHorizontal, choices=[[1, "Portfolio 1: Environmental Score=5%, Return(FR:Rendement)=8%"], [2, "Portfolio 2: Environmental Score=95%, Return(FR:Rendement)=6%"]]) #Q2_500_6m
-    Q3_r7_increase_L = models.PositiveIntegerField(widget=widgets.RadioSelectHorizontal, choices=[[1, "Portfolio 1: Environmental Score=5%, Return(FR:Rendement)=8%"], [2, "Portfolio 2: Environmental Score=95%, Return(FR:Rendement)=7%"]]) #Q3_500_6m   
-    Q4_r8_increase_L = models.PositiveIntegerField(widget=widgets.RadioSelectHorizontal, choices=[[1, "Portfolio 1: Environmental Score=5%, Return(FR:Rendement)=8%"], [2, "Portfolio 2: Environmental Score=95%, Return(FR:Rendement)=8%"]]) #Q4_500_6m
+    Q2_r6_increase_L = models.PositiveIntegerField(widget=widgets.RadioSelectHorizontal, choices=[[1, "Portfolio 1: Environmental Score=5%, Return(FR:Rendement)=8%"], [2, "Portfolio 2: Environmental Score=95%, Return(FR:Rendement)=6%"]],
+    label = "Please choose between these two portfolios//Veuillez choisir entre ces deux options") #Q2_500_6m
+    Q3_r7_increase_L = models.PositiveIntegerField(widget=widgets.RadioSelectHorizontal, choices=[[1, "Portfolio 1: Environmental Score=5%, Return(FR:Rendement)=8%"], [2, "Portfolio 2: Environmental Score=95%, Return(FR:Rendement)=7%"]],
+    label = "Please choose between these two portfolios//Veuillez choisir entre ces deux options") #Q3_500_6m   
+    Q4_r8_increase_L = models.PositiveIntegerField(widget=widgets.RadioSelectHorizontal, choices=[[1, "Portfolio 1: Environmental Score=5%, Return(FR:Rendement)=8%"], [2, "Portfolio 2: Environmental Score=95%, Return(FR:Rendement)=8%"]],
+    label = "Please choose between these two portfolios//Veuillez choisir entre ces deux options") #Q4_500_6m
  
-    Q2_envscore80_R = models.PositiveIntegerField(widget=widgets.RadioSelectHorizontal, choices=[[1, "Portfolio 1: Environmental Score=80%, Return(FR:Rendement)=5%"], [2, "Portfolio 2: Environmental Score=5%, Return(FR:Rendement)=8%"]]) #Q1_20000_6m    
-    Q3_envscore65_R = models.PositiveIntegerField(widget=widgets.RadioSelectHorizontal, choices=[[1, "Portfolio 1: Environmental Score=65%, Return(FR:Rendement)=5%%"], [2, "Portfolio 2: Environmental Score=5%, Return(FR:Rendement)=8%"]]) #Q2_20000_6m   
+    Q2_envscore80_R = models.PositiveIntegerField(widget=widgets.RadioSelectHorizontal, choices=[[1, "Portfolio 1: Environmental Score=80%, Return(FR:Rendement)=5%"], [2, "Portfolio 2: Environmental Score=5%, Return(FR:Rendement)=8%"]],
+    label = "Please choose between these two portfolios//Veuillez choisir entre ces deux options") #Q1_20000_6m    
+    Q3_envscore65_R = models.PositiveIntegerField(widget=widgets.RadioSelectHorizontal, choices=[[1, "Portfolio 1: Environmental Score=65%, Return(FR:Rendement)=5%%"], [2, "Portfolio 2: Environmental Score=5%, Return(FR:Rendement)=8%"]],
+    label = "Please choose between these two portfolios//Veuillez choisir entre ces deux options") #Q2_20000_6m   
     Q4_envscore50_R = models.PositiveIntegerField(widget=widgets.RadioSelectHorizontal, choices=[[1, "Portfolio 1: Environmental Score=50%, Return(FR:Rendement)=5%"], [2, "Portfolio 2: Environmental Score=5%, Return(FR:Rendement)=8%"]]) #Q3_20000_6m 
-    Q5_envscore35_R = models.PositiveIntegerField(widget=widgets.RadioSelectHorizontal, choices=[[1, "Portfolio 1: Environmental Score=35%, Return(FR:Rendement)=5%"], [2, "Portfolio 2: Environmental Score=5%, Return(FR:Rendement)=8%"]]) #Q4_20000_6m 
-    Q6_envscore20_R = models.PositiveIntegerField(widget=widgets.RadioSelectHorizontal, choices=[[1, "Portfolio 1: Environmental Score=20%, Return(FR:Rendement)=5%"], [2, "Portfolio 2: Environmental Score=5%, Return(FR:Rendement)=8%"]]) #Q5_20000_6m                   
-    Q7_envscore5_R = models.PositiveIntegerField(widget=widgets.RadioSelectHorizontal, choices=[[1, "Portfolio 1: Environmental Score=5%, Return(FR:Rendement)=5%"], [2, "Portfolio 2: Environmental Score=5%, Return(FR:Rendement)=8%"]]) #Q1_500_1year
+    Q5_envscore35_R = models.PositiveIntegerField(widget=widgets.RadioSelectHorizontal, choices=[[1, "Portfolio 1: Environmental Score=35%, Return(FR:Rendement)=5%"], [2, "Portfolio 2: Environmental Score=5%, Return(FR:Rendement)=8%"]],
+    label = "Please choose between these two portfolios//Veuillez choisir entre ces deux options") #Q4_20000_6m 
+    Q6_envscore20_R = models.PositiveIntegerField(widget=widgets.RadioSelectHorizontal, choices=[[1, "Portfolio 1: Environmental Score=20%, Return(FR:Rendement)=5%"], [2, "Portfolio 2: Environmental Score=5%, Return(FR:Rendement)=8%"]],
+    label = "Please choose between these two portfolios//Veuillez choisir entre ces deux options") #Q5_20000_6m                   
+    Q7_envscore5_R = models.PositiveIntegerField(widget=widgets.RadioSelectHorizontal, choices=[[1, "Portfolio 1: Environmental Score=5%, Return(FR:Rendement)=5%"], [2, "Portfolio 2: Environmental Score=5%, Return(FR:Rendement)=8%"]],
+    label = "Please choose between these two portfolios//Veuillez choisir entre ces deux options") #Q1_500_1year
         
     Env_question = models.PositiveIntegerField(widget=widgets.RadioSelect, choices=[[1, "Not worried at all // Pas inquiet du tout"], [2, "A little worried // Un peu inquiet"], [3, "I often think about it // J'y pense souvent"], [4, "I am very worried about it // Je suis très inquiet"], [5, "Prefer not to answer // Je préfère de ne pas répondre"]])
     
